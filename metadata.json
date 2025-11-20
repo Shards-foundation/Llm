@@ -1,0 +1,9 @@
+{
+  "name": "Copy of Copy of OmniGrid AI",
+  "description": "A world-class, multi-model AI interface featuring Gemini 3 Pro, Veo Video Generation, Imagen 3, and Real-time Live Audio capabilities in a unified, dark-mode aesthetic.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}
