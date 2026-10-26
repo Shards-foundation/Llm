@@ -14,10 +14,15 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 20.20.2
+      - name: Pin npm to Node 20-compatible release
+        run: |
+          npm install --global npm@11.21.1
+          npm --version
       - name: Install dependencies
         run: npm install
-      - name: Type check
-        run: npm run build -- --noEmit || npx tsc --noEmit || echo "No type check script"
+      - name: TypeScript check (best-effort; non-blocking)
+        continue-on-error: true
+        run: ./node_modules/.bin/tsc --noEmit --pretty false
       - name: Build
-        run: npm run build || echo "No build script"
+        run: npm run build
